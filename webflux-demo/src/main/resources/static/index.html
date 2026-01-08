@@ -15,11 +15,14 @@
     const instance = axios.create({
         baseURL: 'http://localhost:8080/',
         timeout: 10000000,
-        responseType: 'stream'
+        responseType: 'stream',
+        onDownloadProgress: function (progressEvent) {
+            console.log("progressEvent--->",progressEvent)
+            document.getElementById("sseWindows").innerHTML=progressEvent.event.currentTarget.responseText;
+        },
     });
     instance.get('/sse')
         .then(function (response) {
-            // document.getElementById("sseWindows").innerHTML
             console.log(response);
 
         })

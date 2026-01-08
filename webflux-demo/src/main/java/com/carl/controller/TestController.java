@@ -26,13 +26,13 @@ public class TestController {
 
 
     @GetMapping(value = "/sse",produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    @CrossOrigin(origins = "*")
+//    @CrossOrigin(origins = "*")
     public Flux<String> sse() {
         return Flux.range(1,10)
                 .map(i->{
                     return "haha-"+i;
                 })
-                .delaySubscription(Duration.ofSeconds(1))
+                .delayElements(Duration.ofSeconds(1))
                 ;
     }
 }
