@@ -25,6 +25,12 @@ public class TestController {
     }
 
 
+    /**
+     * 补充一下map和flatMap的区别
+     * map:执行1：1的转换，转换过程是同步的
+     * flatMap:执行1：N的转换，转换过程是异步的，当需要进行非阻塞I/O操作(如数据库调用、HTTP请求)时使用
+     * @return
+     */
     @GetMapping(value = "/sse",produces = MediaType.TEXT_EVENT_STREAM_VALUE)
 //    @CrossOrigin(origins = "*")
     public Flux<String> sse() {
@@ -34,5 +40,6 @@ public class TestController {
                 })
                 .delayElements(Duration.ofSeconds(1))
                 ;
+
     }
 }
