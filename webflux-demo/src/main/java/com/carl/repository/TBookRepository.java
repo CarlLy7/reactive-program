@@ -23,4 +23,5 @@ public interface TBookRepository extends R2dbcRepository<TBook,Integer> {
             where b.id=:bookId
             """)
     Mono<TBook> getBookById(@Param("bookId") int bookId);
+
 }

@@ -1,11 +1,8 @@
-package com.carl.model;
+package com.carl.domain;
 
-import com.carl.domain.BookVo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.List;
 
@@ -18,11 +15,8 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table("t_user")
-public class TUser {
-    @Id
+public class UserBookVo {
     private Integer id;
-
     private String name;
 
     private List<BookVo> books;
