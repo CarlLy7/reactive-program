@@ -1,0 +1,8 @@
+spring:
+  r2dbc:
+    username: root
+    password: 123456
+    url: r2dbc:mysql://localhost:3306/carl?useSSL=false&serverTimezone=Asia/Shanghai
+
+server:
+  port: 8082

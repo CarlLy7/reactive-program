@@ -17,6 +17,7 @@
     <module>stream-lambda</module>
       <module>reactor</module>
       <module>webflux-demo</module>
+      <module>webflux-security</module>
   </modules>
 
   <properties>
